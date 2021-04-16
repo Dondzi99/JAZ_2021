@@ -1,0 +1,17 @@
+my:
+  custom:
+    property: Hello from application properties
+---
+spring:
+  config:
+    activate:
+      on-profile: MojYaml
+my:
+  custom:
+    property: Hello from application on-profile MojYaml
+cos:
+  czego:
+    nie:
+      ma: Pawel Dondziak
+czy:
+  bean: true
