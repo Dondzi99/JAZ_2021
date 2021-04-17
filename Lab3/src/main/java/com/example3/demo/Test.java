@@ -18,7 +18,7 @@ public class Test {
         return ResponseEntity.ok(new Car("GD00000",10000));
     }
 
-    @GetMapping("/modelAuto")
+    @PostMapping("/modelAuto")
     ResponseEntity<Car> model(@RequestBody Car auto) {
         return ResponseEntity.ok(auto);
     }
