@@ -32,7 +32,7 @@ public class Homework {
     }
 
     @DeleteMapping("/deleteEntity/{MojString}")
-    ResponseEntity<String> deleteEntity(@PathVariable String MojString){
+    ResponseEntity deleteEntity(@PathVariable String MojString){
         return ResponseEntity.ok().build();
     }
 }
