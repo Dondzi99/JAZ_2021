@@ -1,12 +1,12 @@
 package com.example.demo;
 
-public class ClassMovie {
-    private int ID;
+public class Movie {
+    private Integer ID;
     private String Nazwa;
-    private EnumMovieCategory Kategoria;
+    private MovieCategoryEnum Kategoria;
     private int RokProdukcji;
 
-    public ClassMovie(int ID, String nazwa, EnumMovieCategory kategoria, int rokProdukcji) {
+    public Movie(Integer ID, String nazwa, MovieCategoryEnum kategoria, int rokProdukcji) {
         this.ID = ID;
         Nazwa = nazwa;
         Kategoria = kategoria;
@@ -29,11 +29,11 @@ public class ClassMovie {
         Nazwa = nazwa;
     }
 
-    public EnumMovieCategory getKategoria() {
+    public MovieCategoryEnum getKategoria() {
         return Kategoria;
     }
 
-    public void setKategoria(EnumMovieCategory kategoria) {
+    public void setKategoria(MovieCategoryEnum kategoria) {
         Kategoria = kategoria;
     }
 
