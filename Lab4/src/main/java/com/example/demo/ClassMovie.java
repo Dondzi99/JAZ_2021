@@ -2,7 +2,7 @@ package com.example.demo;
 
 public class ClassMovie {
     private int ID;
-    private String Nazwa,
+    private String Nazwa;
     private EnumMovieCategory Kategoria;
     private int RokProdukcji;
 
