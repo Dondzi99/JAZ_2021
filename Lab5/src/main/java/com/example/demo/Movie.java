@@ -1,24 +1,32 @@
 package com.example.demo;
 
+
+import javax.persistence.*;
+
+@Entity
 public class Movie {
-    private Integer ID;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String Nazwa;
+    @Enumerated(EnumType.STRING)
     private MovieCategoryEnum Kategoria;
+    @Column(name = "rokprodukcji")
     private int RokProdukcji;
 
     public Movie(Integer ID, String nazwa, MovieCategoryEnum kategoria, int rokProdukcji) {
-        this.ID = ID;
+        this.id = ID;
         Nazwa = nazwa;
         Kategoria = kategoria;
         RokProdukcji = rokProdukcji;
     }
 
-    public int getID() {
-        return ID;
+    public Movie() {
+
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(Integer ID) {
+        this.id = ID;
     }
 
     public String getNazwa() {
