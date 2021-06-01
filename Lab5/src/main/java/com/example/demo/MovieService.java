@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MovieService {
@@ -25,7 +26,7 @@ public class MovieService {
 
     public Movie getMovie(Integer ID)
     {
-        return movieRepository.findById(ID).orElseThrow(() -> new RuntimeException());
+        return movieRepository.findById(ID).orElseThrow(() -> new MovieNotFoundException());
     }
 
     public Movie addMovie(Movie movie){
@@ -41,5 +42,15 @@ public class MovieService {
 
     public void deleteMovie(int ID){
         movieRepository.deleteById(ID);
+    }
+
+    public Movie setAvailable(int ID) {
+        if(movieRepository.existsById(ID)) {
+            Movie movie = movieRepository.findById(ID).orElseThrow(() -> new MovieNotFoundException());
+            movie.setAvailable(true);
+            return movieRepository.save(movie);
+        }
+        else
+            throw new MovieNotFoundException();
     }
 }

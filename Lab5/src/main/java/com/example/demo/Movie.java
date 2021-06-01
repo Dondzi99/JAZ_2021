@@ -11,14 +11,23 @@ public class Movie {
     private String Nazwa;
     @Enumerated(EnumType.STRING)
     private MovieCategoryEnum Kategoria;
-    @Column(name = "rokprodukcji")
     private int RokProdukcji;
+    private Boolean isAvailable;
 
-    public Movie(Integer ID, String nazwa, MovieCategoryEnum kategoria, int rokProdukcji) {
-        this.id = ID;
+    public Boolean getAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(Boolean available) {
+        isAvailable = available;
+    }
+
+    public Movie(Integer id, String nazwa, MovieCategoryEnum kategoria, int rokProdukcji, Boolean isAvailable) {
+        this.id = id;
         Nazwa = nazwa;
         Kategoria = kategoria;
         RokProdukcji = rokProdukcji;
+        this.isAvailable = isAvailable;
     }
 
     public Movie() {
