@@ -44,13 +44,11 @@ public class MovieService {
         movieRepository.deleteById(ID);
     }
 
-    public Movie setAvailable(int ID) {
-        if(movieRepository.existsById(ID)) {
-            Movie movie = movieRepository.findById(ID).orElseThrow(() -> new MovieNotFoundException());
-            movie.setAvailable(true);
-            return movieRepository.save(movie);
-        }
-        else
-            throw new MovieNotFoundException();
+    public void setAvailableT(int ID) {
+        movieRepository.updateMovieAvailability(true,ID);
+    }
+
+    public void setAvailableF(int ID) {
+        movieRepository.updateMovieAvailability(false,ID);
     }
 }

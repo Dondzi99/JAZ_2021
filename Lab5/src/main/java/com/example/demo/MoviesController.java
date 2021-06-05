@@ -41,9 +41,15 @@ public class MoviesController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/movies/setAvailable/{ID}")
-    ResponseEntity<Movie> setAvailable(@PathVariable int ID){
-        return ResponseEntity.ok(movieService.setAvailable(ID));
+    @PutMapping("/movies/setAvailableT/{ID}")
+    ResponseEntity<Void> setAvailableT(@PathVariable int ID){
+        movieService.setAvailableT(ID);
+        return ResponseEntity.ok().build();
     }
 
+    @PutMapping("/movies/setAvailableF/{ID}")
+    ResponseEntity<Void> setAvailableF(@PathVariable int ID){
+        movieService.setAvailableF(ID);
+        return ResponseEntity.ok().build();
+    }
 }

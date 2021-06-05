@@ -18,9 +18,15 @@ public class RentialController {
         return ResponseEntity.ok(rentialService.getMovie(ID));
     }
 
-    @GetMapping("/movieReturn/{ID}")
+    @PutMapping ("/movieReturn/{ID}")
     ResponseEntity<Void> returnMovie(@PathVariable Integer ID) {
         rentialService.returnMovie(ID);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/movieGet/{ID}")
+    ResponseEntity<Void> returnGet(@PathVariable Integer ID) {
+        rentialService.movieGet(ID);
         return ResponseEntity.ok().build();
     }
 }
