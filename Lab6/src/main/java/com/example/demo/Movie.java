@@ -1,15 +1,8 @@
 package com.example.demo;
 
-
-import javax.persistence.*;
-
-@Entity
 public class Movie {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String Nazwa;
-    @Enumerated(EnumType.STRING)
     private MovieCategoryEnum Kategoria;
     private int RokProdukcji;
     private Boolean isAvailable;
