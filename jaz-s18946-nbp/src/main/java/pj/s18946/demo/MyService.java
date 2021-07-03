@@ -11,12 +11,14 @@ public class MyService {
 
     private final RestTemplate restTemplate;
     private final currencyReposytory cUrrencyReposytory;
-
+// wstrzykiwanie RestTemplate oraz currencyReposytory
     public MyService(RestTemplate restTemplate, currencyReposytory cUrrencyReposytory) {
         this.restTemplate = restTemplate;
         this.cUrrencyReposytory = cUrrencyReposytory;
     }
 
+    // funkcja pytająca się api nbp o kurs wcześniej zdefiniowanej waluty
+    // zwraca srednia tej waluty
     public double getCurrency(String currencyName, Date datefrom, Date dateto)
     {
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
@@ -27,6 +29,7 @@ public class MyService {
     }
 
 
+    // funkcja zapisujace obiekt currency do bazy
     public currency addCurrency(currency c){
         return cUrrencyReposytory.save(c);
     }

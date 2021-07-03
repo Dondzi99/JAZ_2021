@@ -3,6 +3,8 @@ package com.example.demo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@ApiRespon
+
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/controller")
 public class RentialController {
