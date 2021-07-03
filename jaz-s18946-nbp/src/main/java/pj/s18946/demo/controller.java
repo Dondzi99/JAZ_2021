@@ -21,9 +21,10 @@ public class controller {
     }
 
     @GetMapping("/currency/{currencyName}/{datefrom}/{dateto}")
-    ResponseEntity<currency> getAllMovies(@PathVariable String currencyName, @PathVariable Date datefrom, @PathVariable Date dateto)
+    ResponseEntity<currency> currency(@PathVariable String currencyName, @PathVariable Date datefrom, @PathVariable Date dateto)
     {
         double average = myService.getCurrency(currencyName,datefrom,dateto);
+        currency NEWCURRENCY = new currency(0,currencyName,dateto,datefrom,average,new Date());
         return ResponseEntity.ok(new currency());
     }
 
