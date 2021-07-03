@@ -1,9 +1,6 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -11,7 +8,11 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RentialService {
 
-    @Autowired RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
+
+    public RentialService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     public Movie getMovie(Integer ID)
     {
